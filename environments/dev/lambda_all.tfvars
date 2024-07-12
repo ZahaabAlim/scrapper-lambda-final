@@ -6,7 +6,7 @@ environment = "dev"
 lambda_functions = [
     {
         # Configuration for the first Lambda function 'my-lambda-dev-1'
-        function_name       = "my-lambda-dev-1"
+        function_name       = "lambda-dev-1"
         handler             = "cost-explorer.lambda_handler"
         runtime             = "python3.10"
         timeout             = 60
@@ -18,7 +18,7 @@ lambda_functions = [
     },
     {
         # Configuration for the second Lambda function 'my-lambda-dev-2'
-        function_name       = "my-lambda-dev-2"
+        function_name       = "lambda-dev-2"
         handler             = "hello.lambda_handler"
         runtime             = "python3.10"
         timeout             = 30
