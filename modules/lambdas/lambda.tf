@@ -1,3 +1,4 @@
+# This block creates multiple AWS Lambda functions.
 resource "aws_lambda_function" "lambda" {
   for_each          = { for lambda in var.lambda_functions : lambda.function_name => lambda }
   function_name     = each.value.function_name
@@ -11,6 +12,8 @@ resource "aws_lambda_function" "lambda" {
     variables = each.value.environment_variables
   }
 }
+
+# This block creates multiple AWS IAM roles for the Lambda functions.
 resource "aws_iam_role" "lambda_role" {
   for_each = { for lambda in var.lambda_functions : lambda.function_name => lambda }
   name = "${each.value.function_name}_role"
